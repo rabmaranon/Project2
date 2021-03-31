@@ -1,0 +1,141 @@
+/******* GENERAL STRUCTURE *******/
+body {
+  margin-top: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  margin-left: 40px;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+a {
+  color: #d93f87;
+}
+
+/******* FOUNDATION CSS specific *******/
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.small-12 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.title {
+  color: #03afda;
+}
+
+div .selected {
+  background-color: rgb(20, 19, 19);
+}
+
+/******* GAME ITEMS *******/
+
+/* main panel of playground */
+#gameboard {
+  min-height: 400px;
+  width: 100%;
+}
+
+/* div to show ready solition sets */
+#solutions {
+  display: block;
+}
+
+/* div for each individual card */
+.card,
+.cardSolution {
+  border: 1px solid #d93f87;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -o-border-radius: 15px;
+  display: inline-block;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  margin: 10px;
+  background-color: #2b1a3e;
+}
+.card:hover {
+  box-shadow: 2px 0px 15px 0px #d93f87;
+}
+
+/* each separate element on the card */
+.cardImage {
+  width: 25px;
+  height: 50px;
+  background-size: 25px 50px;
+  margin: 5px;
+  margin-top: 25px;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+/* color schemes for cards */
+
+.purpleCard {
+  -webkit-filter: hue-rotate(0deg);
+  -o-filter: hue-rotate(0deg);
+  -moz-filter: hue-rotate(0deg);
+  -ms-filter: hue-rotate(0deg);
+  filter: hue-rotate(43deg);
+}
+.redCard {
+  -webkit-filter: hue-rotate(63deg);
+  -o-filter: hue-rotate(63deg);
+  -moz-filter: hue-rotate(63deg);
+  -ms-filter: hue-rotate(63deg);
+  filter: hue-rotate(63deg);
+}
+.greenCard {
+  filter: invert(96%) sepia(92%) saturate(1126%) hue-rotate(360deg)
+    brightness(107%) contrast(103%);
+}
+
+/* url of images per card image variation */
+.clear-diamond {
+  background-image: url("./img/diamond-empty.png");
+}
+.shaded-diamond {
+  background-image: url("./img/diamond-stripe.png");
+}
+.solid-diamond {
+  background-image: url("./img/diamond-solid.png");
+}
+.clear-squiggle {
+  background-image: url("./img/squiggle-empty.png");
+}
+.shaded-squiggle {
+  background-image: url("./img/squiggle-stripe.png");
+}
+.solid-squiggle {
+  background-image: url("./img/squiggle-solid.png");
+}
+.clear-oval {
+  background-image: url("./img/oval-empty.png");
+}
+.shaded-oval {
+  background-image: url("./img/oval-stripe.png");
+}
+.solid-oval {
+  background-image: url("./img/oval-solid.png");
+}
+
+@media screen and (max-width: 585px) {
+  .cardImage {
+    background-size: 20px 30px;
+  }
+}

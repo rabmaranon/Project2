@@ -1,0 +1,35 @@
+#gamestats {
+  margin-left: 40px;
+  background-color: #202020;
+  padding: 30px;
+  width: 30%;
+  max-width: 300px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .progress-circle {
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  #gamestats {
+    flex-direction: row;
+    width: 100vw;
+    max-width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 15px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .progress-circle {
+    width: 50px !important;
+  }
+}

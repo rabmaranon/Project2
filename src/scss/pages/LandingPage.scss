@@ -1,0 +1,41 @@
+#landing-page {
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+
+  .left,
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    height: 98vh;
+    transition: all 2.3s;
+
+    h1 {
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin-top: 20px;
+    }
+  }
+
+  .right {
+    select,
+    option {
+      background-color: #1d1d1d;
+      color: #d93f87;
+      outline: #d93f87;
+      border: 1px solid #d93f87;
+      width: 300px;
+      height: 50px;
+    }
+
+    select {
+      margin-bottom: 30px;
+    }
+  }
+}
