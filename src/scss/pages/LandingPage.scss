@@ -38,4 +38,26 @@
       margin-bottom: 30px;
     }
   }
+  .by {
+    margin-top: 25px;
+  }
+}
+
+.dd-header,
+.dd-list {
+  background-color: #1d1d1d !important;
+}
+.dd-header-title {
+  font-size: 1.5rem !important;
+  font-weight: 800 !important;
+}
+.dd-header,
+.dd-list-item {
+  padding-left: 50px !important;
+}
+.dd-list-item {
+  padding-left: 60px !important;
+}
+.dd-list-item:hover {
+  background-color: #8b00f7 !important;
 }

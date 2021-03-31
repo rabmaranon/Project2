@@ -26,7 +26,9 @@ function App() {
 
   return (
     <div className="app">
-      <ToastContainer />
+      <ToastContainer
+        position="top-center"
+      />
 
 
       {/* Routes*/}

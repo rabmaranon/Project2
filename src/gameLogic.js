@@ -108,8 +108,25 @@ function Game() {
         }
     };
 
+
+    this.drwaThreeCard = () => {
+        if (this.deck.length > 11) {
+            this.activeCards = [...this.deck.splice(0, 3), ...this.activeCards]
+
+
+            this.showCardsInDeck();
+            this.displayCards();
+            this.solve();
+
+        } else {
+            toast.error("No card Left behind");
+        }
+
+
+    }
     // display card on gameboard
     this.displayCards = function () {
+
         var gameboard = document.getElementById("gameboard");
         gameboard.innerHTML = "";
 
@@ -206,7 +223,9 @@ function Game() {
                 this.displayCards();
                 this.solve();
                 //this.removeCards(arrayOfCards);
+
                 return this.applause();
+
             }
         }
         return this.failure();
@@ -268,10 +287,10 @@ function Game() {
     };
 
 
-    // sets of procedures when selected cards didn't made SET
+    // sets of procedures when selected cards didn't make a SET
     this.failure = function () {
         audio('failure');
-        toast.error("Sorry, this is not a Set!");
+        toast.error("Not a set, try again!");
         return false;
     };
 
@@ -281,7 +300,7 @@ function Game() {
 
     };
 
-    // disolay counter of cards left in deck
+    // display counter of cards left in deck
     this.showCardsInDeck = function () {
 
         // $('#cardsInDeck').html('<b>Cards in Deck left: </b>' + this.deck.length);

@@ -6,11 +6,12 @@ import "../scss/pages/GameBoard.scss"
 import Button from '../components/Button';
 import { toast } from 'react-toastify';
 import { useStateValue } from "../StateProvider";
+import { Link } from 'react-router-dom';
 
 function Game() {
     const [showFireworks, setshowFireworks] = useState(false);
 
-    const [{ }, dispatch] = useStateValue();
+    const [{ gameDifficulty }, dispatch] = useStateValue();
 
     function audio(id) {
         var audio = document.getElementById(id);
@@ -60,6 +61,19 @@ function Game() {
         var found = -1;
 
 
+        $("#drawcards").on("click", () => {
+
+            game.drwaThreeCard();
+
+            cleanSelect(selectedCards);
+
+            selectedCards = [];
+            dispatch({
+                type: "SET_REMAINING_CARDS",
+                item: game.deck.length,
+            });
+        })
+
         // function to handle on click of cards attemptsCircle
         $('div').on('click', '.card', function (event) {
 
@@ -91,8 +105,26 @@ function Game() {
                     /// three card has beeen selected now checking for set
 
                     if (game.solutions.length == 0) {
-                        audio('end');
-                        toast.info("No Card lef to find");
+                        if (game.deck.length > 11) {
+                            audio('end');
+                            // toast.info("No card left!");
+                            if (gameDifficulty == "medium") {
+                                game.drwaThreeCard();
+
+                                cleanSelect(selectedCards);
+
+                                selectedCards = [];
+                                dispatch({
+                                    type: "SET_REMAINING_CARDS",
+                                    item: game.deck.length,
+                                });
+                            }
+                        } else {
+                            audio('end');
+                            toast.info("No card left");
+
+
+                        }
 
                     } else {
 
@@ -117,20 +149,28 @@ function Game() {
                                 setshowFireworks(false);
                             }, 1200)
 
+                            setTimeout(() => {
+                                cleanSelect(selectedCards);
+                                selectedCards = [];
+
+                            }, 500)
+
+                            toast.info("Congratulations you found a SET!")
+
                         } else {
                             errorCounts++;
                             // errorsCircle.update(errorCounts, 100);
+                            cleanSelect(selectedCards);
+
+                            selectedCards = [];
                             dispatch({
                                 type: "SET_MISTAKES",
                                 item: errorCounts,
                             });
 
-                        }
-                        setTimeout(() => {
-                            cleanSelect(selectedCards);
-                            selectedCards = [];
 
-                        }, 500)
+                        }
+
 
                     }
                     // cardsCircle.update(game.deck.length, 100);
@@ -156,13 +196,14 @@ function Game() {
     }, [])
     return (
         <div id="game-right">
-
+            <Link to="/">
+                <h1>SET Card Game</h1>
+            </Link>
             <div id="gameboard">
+
 
             </div>
 
-
-            {/* <input id="cheatMode" class="button small expand radius info" type="button" onclick={show_hide('solutions', 'cheatMode')} value="Show solutions"></input> */}
             <div id="solutions" class="panel text-center">
             </div>
             <div className="pyro" style={{ display: showFireworks ? "block" : "none" }}>

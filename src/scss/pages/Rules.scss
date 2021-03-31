@@ -1,5 +1,5 @@
 #rules {
-  margin: 20px;
+  margin: 30px;
 
   h1 {
     font-size: 40px;
@@ -16,5 +16,28 @@
   }
   .btnf {
     align-self: center;
+  }
+
+  .cards-conatiner {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .cardf {
+    background-color: #2b1a3e;
+    width: 170px;
+    height: 140px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  .inner {
+    width: 100%;
+    max-width: 800px;
   }
 }

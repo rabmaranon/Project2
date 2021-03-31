@@ -1,8 +1,8 @@
 import React from 'react'
 import "../scss/components/Button.scss"
-function Button({ children }) {
+function Button({ children, color }) {
     return (
-        <button className="btn">
+        <button className={color ? 'btn11' : "btn"} style={{ backgroundColor: color }}>
             {children}
         </button>
     )

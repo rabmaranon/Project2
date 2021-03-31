@@ -4,8 +4,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #1d1d1d;
-  color: #fff;
+  background-color: #faf9f9;
+  color: rgb(4, 149, 165);
 }
 
 * {

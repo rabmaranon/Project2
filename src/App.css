@@ -16,7 +16,8 @@ hr {
   margin-bottom: 10px;
 }
 a {
-  color: #d93f87;
+  color: #ce0094bd;
+  margin-left: 10px;
 }
 
 /******* FOUNDATION CSS specific *******/
@@ -35,7 +36,7 @@ a {
 }
 
 div .selected {
-  background-color: rgb(20, 19, 19);
+  background-color: rgb(12, 11, 11);
 }
 
 /******* GAME ITEMS *******/
@@ -54,12 +55,12 @@ div .selected {
 /* div for each individual card */
 .card,
 .cardSolution {
-  border: 1px solid #d93f87;
+  border: 2px solid #d93f87;
   border-radius: 15px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -o-border-radius: 15px;
-  display: inline-block;
+  /* display: inline-block; */
   height: 140px;
   display: flex;
   align-items: center;
@@ -67,21 +68,23 @@ div .selected {
 
   text-align: center;
   margin: 10px;
-  background-color: #2b1a3e;
+  background-color: hsl(280, 45%, 82%);
 }
 .card:hover {
-  box-shadow: 2px 0px 15px 0px #d93f87;
+  box-shadow: 3px 0px 15px 0px #d93f87;
 }
 
 /* each separate element on the card */
 .cardImage {
-  width: 25px;
-  height: 50px;
-  background-size: 25px 50px;
-  margin: 5px;
+  width: 40px;
+  height: 60px;
+  background-size: 40px 50px;
+  margin: 3px;
   margin-top: 25px;
   display: inline-block;
   background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 /* color schemes for cards */
@@ -91,7 +94,7 @@ div .selected {
   -o-filter: hue-rotate(0deg);
   -moz-filter: hue-rotate(0deg);
   -ms-filter: hue-rotate(0deg);
-  filter: hue-rotate(43deg);
+  filter: hue-rotate(0deg);
 }
 .redCard {
   -webkit-filter: hue-rotate(63deg);

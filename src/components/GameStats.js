@@ -3,6 +3,7 @@ import "../scss/components/GameStats.scss";
 import CircularProgressbarContiner from "../components/CircleProgressBarConatiner";
 import Button from './Button';
 import { useStateValue } from "../StateProvider";
+import { Link } from 'react-router-dom';
 
 
 
@@ -16,27 +17,34 @@ function GameStats({ history, location }) {
         <div id="gamestats">
             <div>
 
-                <h3>Cards Left:</h3>
-                <CircularProgressbarContiner percentage={Math.floor(reaminingCards / 69 * 100)} text={reaminingCards ? reaminingCards : "0"} />
+                <h3>Cards in Deck</h3>
+                <CircularProgressbarContiner percentage={Math.floor(reaminingCards / 81 * 100)} text={reaminingCards ? reaminingCards : "0"} />
             </div>
 
             <div>
-                <h3>Found Sets:</h3>
+                <h3><center>Sets Found</center></h3>
                 <CircularProgressbarContiner percentage={foundSets} text={foundSets ? foundSets : "0"} />
             </div>
 
 
             <div>
-                <h3>Mistakes</h3>
+                <h3><center>Attempts </center></h3>
                 <CircularProgressbarContiner percentage={mistakes} text={mistakes ? mistakes : "0"} />
             </div>
 
-            <div onClick={() => {
-                history.push("/?slide");
-                window.location.reload()
-            }}>
-                <Button>Start a new Game</Button>
+            <div id="drawcards" className="b">
+                <Button color="#D93F87">Draw 3 Cards</Button>
             </div>
+
+            <div onClick={() => {
+
+                window.location.reload()
+            }} className="b">
+                <Button color="#FB0144">Reset Game</Button>
+            </div>
+
+            <Link to="/" className="b" >
+                <Button color="#2B1A3E">Main Menu</Button></Link>
 
         </div>
     )
